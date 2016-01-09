@@ -1,8 +1,9 @@
-# JavaLibraries - MarkDown
-Repository for MarkDown Library
+MarkDown
+======
 
-Build-Status [![Build Status](https://travis-ci.org/denisw160/JavaLibraries.svg?branch=markdown)](https://travis-ci.org/denisw/JavaLibraries)
-
-This is the Branch for the Java Library MarkDown.
+A Repository for MarkDown Library.
 
 Read more: http://blog.wirries.me/projekte/projekt-markdown/
+
+## Build-Status
+master[![Build Status](https://travis-ci.org/denisw160/MarkDown.svg?branch=master)](https://travis-ci.org/denisw/MarkDown)

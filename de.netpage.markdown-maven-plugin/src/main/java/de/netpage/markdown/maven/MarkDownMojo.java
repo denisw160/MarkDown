@@ -136,7 +136,7 @@ public class MarkDownMojo extends AbstractMojo {
             throw new MojoExecutionException(message);
         }
 
-        recursiveBool = Boolean.getBoolean(recursive);
+        recursiveBool = Boolean.valueOf(recursive);
 
         try {
             outputFormatEnum = OutputFormat.valueOf(outputFormat);

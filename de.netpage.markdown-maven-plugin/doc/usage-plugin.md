@@ -7,7 +7,7 @@ Sie funktioniert mit JDK 1.7 oder 1.8.
 Dazu wird die pom.xml einfach um das Plugin "markdown-maven-plugin" erweitert.
 
     <plugin>
-        <groupId>de.netpage</groupId>
+        <groupId>de.netpage.markdown</groupId>
         <artifactId>markdown-maven-plugin</artifactId>
         <version>x.x</version>
         <configuration>

@@ -7,9 +7,9 @@
 
     <!-- Module Parent -->
     <parent>
-        <groupId>de.netpage</groupId>
+        <groupId>de.netpage.markdown</groupId>
         <artifactId>markdown-parent</artifactId>
-        <version>0.4</version>
+        <version>0.5-snapshot</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -124,7 +124,7 @@
     <dependencies>
         <!-- Module Dependency -->
         <dependency>
-            <groupId>de.netpage</groupId>
+            <groupId>de.netpage.markdown</groupId>
             <artifactId>markdown</artifactId>
         </dependency>
 
