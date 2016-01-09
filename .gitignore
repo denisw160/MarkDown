@@ -1,21 +1,33 @@
+# General Files/Folders
 *.class
+*.iml
+sonar-project.properties
+.idea/
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
 
 # Package Files #
 *.jar
 *.war
 *.ear
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+# Target Folder
 de.netpage.markdown/target/
+de.netpage.markdown-maven-plugin/target/
+
+# Generated Files
 de.netpage.markdown/doc/*.html
+de.netpage.markdown/doc/*.pdf
+de.netpage.markdown/src/test/samples/*.html
+de.netpage.markdown/src/test/samples/*.pdf
 de.netpage.markdown/src/test/samples/recursive/otherdirectory/*.html
 de.netpage.markdown/src/test/samples/recursive/otherdirectory/*.pdf
 de.netpage.markdown/src/test/samples/recursive/*.html
 de.netpage.markdown/src/test/samples/recursive/*.pdf
 de.netpage.markdown/src/test/samples/recursive/subdirectory/*.html
 de.netpage.markdown/src/test/samples/recursive/subdirectory/*.pdf
-de.netpage.markdown/src/test/samples/*.pdf
+de.netpage.markdown-maven-plugin/doc/*.html
+de.netpage.markdown-maven-plugin/doc/*.pdf
+de.netpage.markdown-maven-plugin/doc/maven-plugin/*.html
+de.netpage.markdown-maven-plugin/doc/maven-plugin/*.pdf

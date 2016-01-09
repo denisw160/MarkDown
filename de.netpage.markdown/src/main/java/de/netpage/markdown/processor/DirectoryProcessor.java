@@ -42,9 +42,10 @@ public class DirectoryProcessor implements Processor {
      * Alle Dateien in diesem Verzeichnis werden gefunden, die zur passenden Endung gehören.
      * Ist rekurisiv angegeben, so werden auch alle Unterordner durchsucht und bearbeitet.
      *
-     * @param directory Verzeichnis
-     * @param suffix    Endung
-     * @param recursive Unterordner mit einschließen
+     * @param directory    Verzeichnis
+     * @param suffix       Endung
+     * @param outputFormat Format der Ausgabe
+     * @param recursive    Unterordner mit einschließen
      */
     public DirectoryProcessor(final File directory,
                               final String suffix,

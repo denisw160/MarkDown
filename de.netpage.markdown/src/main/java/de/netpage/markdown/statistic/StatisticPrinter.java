@@ -4,7 +4,6 @@ import de.netpage.markdown.model.Statistic;
 
 /**
  * Dies ist das Interface zum Schreiben von Statistiken.
- * <p/>
  * Zum Schrbeiben der Statistiken gibt es zwei Implementierungen:
  * - Log4jStatisticPrinter
  * - PrintStreamStatisticPrinter

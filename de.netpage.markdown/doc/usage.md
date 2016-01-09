@@ -46,4 +46,6 @@ Dazu wird die pom.xml einfach um das Plugin "exec-maven-plugin" erweitert.
 
 ## Aufgaben
  - Format-Darstellung für einzelne Dateiname (z.B. lange Dateinamen) optimieren. 
- - Maven-Plugin
+ - Einfache Zeilenumbrüche bei der PDF Generation
+ - andere Implementierung: A pure-Java Markdown processor based on a parboiled PEG parser supporting a
+number of extensions http://pegdown.org (siehe auch https://github.com/nicoulaj/idea-markdown)

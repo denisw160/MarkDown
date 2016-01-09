@@ -20,15 +20,13 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 /**
- * An OutputStream that flushes out to a Category.<p>
- * <p/>
- * Note that no data is written out to the Category until the stream is
- * flushed or closed.<p>
- * <p/>
- * Example:<pre>
+ * <p>An OutputStream that flushes out to a Category.</p>
+ * <p>Note that no data is written out to the Category until the stream is
+ * flushed or closed.</p>
+ * <p>Example:</p>
+ * <pre>
  * // make sure everything sent to System.err is logged
  * System.setErr(new PrintStream(new LoggingOutputStream(Category.getRoot(), Priority.WARN), true));
- * <p/>
  * // make sure everything sent to System.out is also logged
  * System.setOut(new PrintStream(new LoggingOutputStream(Category.getRoot(), Priority.INFO), true));
  * </pre>
