@@ -10,3 +10,12 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+de.netpage.markdown/target/
+de.netpage.markdown/doc/*.html
+de.netpage.markdown/src/test/samples/recursive/otherdirectory/*.html
+de.netpage.markdown/src/test/samples/recursive/otherdirectory/*.pdf
+de.netpage.markdown/src/test/samples/recursive/*.html
+de.netpage.markdown/src/test/samples/recursive/*.pdf
+de.netpage.markdown/src/test/samples/recursive/subdirectory/*.html
+de.netpage.markdown/src/test/samples/recursive/subdirectory/*.pdf
+de.netpage.markdown/src/test/samples/*.pdf
