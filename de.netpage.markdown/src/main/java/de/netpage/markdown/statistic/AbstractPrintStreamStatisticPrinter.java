@@ -18,7 +18,12 @@ import java.io.PrintStream;
 public abstract class AbstractPrintStreamStatisticPrinter implements StatisticPrinter {
 
     private static final int BYTE_TO_KB = 1024;
-    private static final String LINE = "------------------------------------------------------------------------";
+
+    private static final String CONSOLE_FORMAT = "| %-40s | %-40s | %9s | %9s |";
+    private static final int FILE_LENGTH = 40;
+
+    private static final String LINE = "---------------------------------------------------------------------------------------------------------------";
+    private static final String MORE = "...";
 
     private final PrintStream stream;
 
@@ -82,11 +87,14 @@ public abstract class AbstractPrintStreamStatisticPrinter implements StatisticPr
      * @param args   Ausgabeparameter
      */
     protected void println(final String format, final Object... args) {
-        getStream().format(format + "%n", args);
+        final String formatNewLine = format + "%n";
+        getStream().format(formatNewLine, args);
     }
 
     /**
      * Gibt die Zusammenfassung aus.
+     *
+     * @param statistic Statistic für die Ausgabe
      */
     protected void printSummary(final Statistic statistic) {
         if (statistic instanceof DirectoryStatistic) {
@@ -101,6 +109,9 @@ public abstract class AbstractPrintStreamStatisticPrinter implements StatisticPr
 
     /**
      * Gibt die Dateien aus.
+     *
+     * @param basePath  Basis-Pfad
+     * @param statistic Statistic für die Ausgabe
      */
     protected void printDetail(final Statistic statistic, final String basePath) {
         if (statistic instanceof FileStatistic) {
@@ -112,13 +123,15 @@ public abstract class AbstractPrintStreamStatisticPrinter implements StatisticPr
 
     /**
      * Gibt die Details für die DirectoryStatistic aus.
+     *
+     * @param basePath  Basis-Pfad
+     * @param statistic Statistic für die Ausgabe
      */
     protected void printDirectory(final DirectoryStatistic statistic, final String basePath) {
         // Header für die Tabelle
         if (statistic.getCountAll() > 0) {
             println();
-            // TODO Kürze zu lange Namen
-            println("| %-20s | %-20s | %10s | %12s |", "Input", "Output", "Processed", "Size (kB)");
+            println(CONSOLE_FORMAT, "Input", "Output", "Processed", "Size (kB)");
             println(LINE);
 
             // Ausgabe pro Datei
@@ -132,14 +145,44 @@ public abstract class AbstractPrintStreamStatisticPrinter implements StatisticPr
 
     /**
      * Schreibt eine Zeile der Statistik für die Datei.
+     *
+     * @param basePath Basis-Pfad
+     * @param f        Statistic für die Ausgabe
      */
     protected void printFile(final FileStatistic f, final String basePath) {
-        // TODO Kürze zu lange Namen
-        println("| %-20s | %-20s | %10s | %12s |",
-                StringUtils.replace(f.getSource().getAbsolutePath(), basePath, ""),
-                f.isProcessed() ? f.getOutput().getName() : "",
+        final String input = StringUtils.replace(f.getSource().getAbsolutePath(), basePath, "");
+        final String output = f.isProcessed() ? f.getOutput().getName() : "";
+        println(CONSOLE_FORMAT,
+                reduce(input, FILE_LENGTH, false),
+                reduce(output, FILE_LENGTH, true),
                 f.isProcessed(),
                 f.getSize() / BYTE_TO_KB);
+    }
+
+    /**
+     * Kürze den angebenen String auf die maximale Länge.
+     * Wenn der String zu lang ist, dann wird der Überstand durch
+     * ... ersetzt.
+     *
+     * @param length      Max. Länge des neuen Strings
+     * @param reduce      String zum Kürzen
+     * @param reduceStart Nur am Start kürzen
+     * @return gekürtzer String
+     */
+    protected String reduce(final String reduce, final int length, final boolean reduceStart) {
+
+        if (reduce.length() <= length) return reduce;
+
+        final String result;
+        final int len = length - MORE.length();
+        if (reduceStart) {
+            result = MORE + StringUtils.right(reduce, len);
+        } else {
+            final int halfLen = len / 2;
+            result = StringUtils.left(reduce, halfLen) + MORE + StringUtils.right(reduce, halfLen);
+        }
+
+        return result;
     }
 
 }

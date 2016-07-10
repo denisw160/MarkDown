@@ -9,17 +9,11 @@ package de.netpage.markdown.output;
  */
 public class ConsoleOutputWriter implements OutputWriter {
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void println() {
         System.out.println();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void println(final String line) {
         System.out.println(line);

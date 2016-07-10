@@ -22,7 +22,7 @@
         <fileSet>
             <!-- Include the generated application jar -->
             <directory>${project.build.directory}</directory>
-            <outputDirectory>/</outputDirectory>
+            <outputDirectory/>
             <includes>
                 <include>*.jar</include>
             </includes>
@@ -30,7 +30,7 @@
         <fileSet>
             <!-- Include the batch files -->
             <directory>bat</directory>
-            <outputDirectory>/</outputDirectory>
+            <outputDirectory/>
         </fileSet>
     </fileSets>
 

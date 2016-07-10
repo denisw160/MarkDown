@@ -81,9 +81,6 @@ public class MarkDownMojo extends AbstractMojo {
 
     // ***** Methods *****
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
         displayHeader();
@@ -136,7 +133,7 @@ public class MarkDownMojo extends AbstractMojo {
             throw new MojoExecutionException(message);
         }
 
-        recursiveBool = Boolean.valueOf(recursive);
+        recursiveBool = StringUtils.equalsIgnoreCase(recursive, "true");
 
         try {
             outputFormatEnum = OutputFormat.valueOf(outputFormat);

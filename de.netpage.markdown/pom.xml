@@ -2,18 +2,19 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
 
     <!-- Module Parent -->
     <parent>
         <groupId>de.netpage.markdown</groupId>
-        <artifactId>markdown-parent</artifactId>
-        <version>0.5-snapshot</version>
+        <artifactId>markdown</artifactId>
+        <version>0.6-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <!-- Module Settings -->
-    <artifactId>markdown</artifactId>
+    <artifactId>markdown-lib</artifactId>
 
     <!-- Module Description -->
     <name>MarkDown-Library</name>
@@ -22,15 +23,15 @@
     <!-- Package -->
     <packaging>jar</packaging>
 
-
     <!-- Build Settings -->
     <build>
+        <defaultGoal>package</defaultGoal>
+        <finalName>markdown</finalName>
         <plugins>
             <!-- Clean -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-clean-plugin</artifactId>
-                <version>2.5</version>
                 <configuration>
                     <filesets>
                         <fileset>
@@ -53,25 +54,11 @@
                 </configuration>
             </plugin>
 
-            <!-- Build Setup -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-            </plugin>
-
-            <!-- Encoding of resource files -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-            </plugin>
-
             <!-- Main-Class in jar -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>2.4</version>
                 <configuration>
-                    <finalName>markdown</finalName>
                     <archive>
                         <manifest>
                             <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
@@ -84,17 +71,10 @@
                 </configuration>
             </plugin>
 
-            <!-- Packing Sources -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-            </plugin>
-
             <!-- Packaging distribution -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <version>2.4</version>
                 <configuration>
                     <descriptors>
                         <descriptor>distribution.xml</descriptor>
@@ -110,17 +90,10 @@
                 </executions>
             </plugin>
 
-            <!-- Packaging libs -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-            </plugin>
-
             <!-- Compile MarkDown as HTML -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
-                <version>1.3.2</version>
                 <configuration>
                     <includeProjectDependencies>true</includeProjectDependencies>
                     <mainClass>de.netpage.markdown.Main</mainClass>
@@ -141,12 +114,6 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
-
-            <!-- Tests -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
             </plugin>
 
             <!-- Code Coverage -->

@@ -21,7 +21,7 @@ public class RecursiveDirectoryScannerTest {
     public void testFindBase() throws Exception {
         final Scanner scanner = new RecursiveDirectoryScanner(baseDir);
         final List<File> files = scanner.find();
-        assertEquals(6, files.size());
+        assertEquals(8, files.size());
         final File file = findFile(files, "emptydirectory");
         assertEquals("emptydirectory", file.getName());
         assertTrue(file.isDirectory());

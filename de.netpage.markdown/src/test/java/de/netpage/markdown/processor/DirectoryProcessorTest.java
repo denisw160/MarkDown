@@ -25,7 +25,7 @@ public class DirectoryProcessorTest {
         assertNotNull(statistic);
 
         assertNotNull(statistic.getFilesAll());
-        assertEquals(5, statistic.getFilesAll().size());
+        assertEquals(8, statistic.getFilesAll().size());
 
         assertNotNull(statistic.getNotProcessedFilesAll());
         assertEquals(0, statistic.getNotProcessedFilesAll().size());
@@ -39,7 +39,7 @@ public class DirectoryProcessorTest {
 
         final DirectoryStatistic statistic = p.process();
         assertNotNull(statistic);
-        assertEquals(5, statistic.getFilesAll().size());
+        assertEquals(8, statistic.getFilesAll().size());
         assertEquals(0, statistic.getNotProcessedFilesAll().size());
         assertTrue(statistic.getSizeAll() > 28600);
     }

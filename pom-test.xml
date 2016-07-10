@@ -8,7 +8,7 @@
     <!-- Project Settings -->
     <groupId>de.netpage.markdown</groupId>
     <artifactId>markdown-test</artifactId>
-    <version>0.5-snapshot</version>
+    <version>0.5</version>
 
     <!-- Module Description -->
     <name>MarkDown-Test</name>
@@ -24,7 +24,7 @@
             <plugin>
                 <groupId>de.netpage.markdown</groupId>
                 <artifactId>markdown-maven-plugin</artifactId>
-                <version>0.5-snapshot</version>
+                <version>0.5</version>
                 <configuration>
                     <directory>./de.netpage.markdown-maven-plugin/doc</directory>
                     <suffix>.md</suffix>

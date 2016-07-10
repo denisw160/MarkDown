@@ -17,6 +17,11 @@ public class MainTest {
     }
 
     @Test
+    public void testMainRecursive() throws Exception {
+        Main.main(new String[]{"-r", "-d", "./src/test/samples"});
+    }
+
+    @Test
     public void testMainHelp() throws Exception {
         Main.main(new String[]{"-h"});
     }

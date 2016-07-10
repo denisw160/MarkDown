@@ -26,6 +26,9 @@ public class MavenLogStatisticPrinter extends AbstractLoggerStatisticPrinter imp
         super(new PrintStream(new LogOutputStream(log), false));
     }
 
+    /**
+     * Stream für die Ausgabe des Maven Logs.
+     */
     private static final class LogOutputStream extends ByteArrayOutputStream {
 
         private final Log log;
@@ -38,9 +41,6 @@ public class MavenLogStatisticPrinter extends AbstractLoggerStatisticPrinter imp
             this.log = log;
         }
 
-        /**
-         * {@inheritDoc}
-         */
         @Override
         public void flush() throws IOException {
             log.info(this.toString());

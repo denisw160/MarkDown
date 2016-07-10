@@ -3,7 +3,7 @@ package de.netpage.markdown.output;
 import org.apache.log4j.Logger;
 
 /**
- * OutputWriter auf Log4j-Basis
+ * OutputWriter auf Log4j-Basis.
  *
  * @author Denis Wirries
  * @version 1.0
@@ -16,22 +16,22 @@ public class Log4jOutputWriter implements OutputWriter {
      */
     public enum Level {
         /**
-         * Debug-Level
+         * Debug-Level.
          */
         DEBUG,
 
         /**
-         * Info-Level
+         * Info-Level.
          */
         INFO,
 
         /**
-         * Warning-Level
+         * Warning-Level.
          */
         WARN,
 
         /**
-         * Error-Level
+         * Error-Level.
          */
         ERROR
     }
@@ -52,17 +52,11 @@ public class Log4jOutputWriter implements OutputWriter {
         this.level = level;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void println() {
         println("");
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void println(final String line) {
         switch (level) {

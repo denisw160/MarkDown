@@ -105,6 +105,7 @@ public class LoggingOutputStream extends OutputStream {
      * is that it closes the output stream. A closed stream cannot perform
      * output operations and cannot be reopened.
      */
+    @Override
     public void close() {
         flush();
         hasBeenClosed = true;
@@ -122,6 +123,7 @@ public class LoggingOutputStream extends OutputStream {
      *                             an <code>IOException</code> may be thrown if the
      *                             output stream has been closed.
      */
+    @Override
     public void write(final int b) throws IOException {
         if (hasBeenClosed) {
             throw new IOException("The stream has been closed.");
@@ -156,6 +158,7 @@ public class LoggingOutputStream extends OutputStream {
      * stream, such bytes should immediately be written to their
      * intended destination.
      */
+    @Override
     public void flush() {
         if (count == 0) {
             return;

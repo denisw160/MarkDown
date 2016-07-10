@@ -93,7 +93,7 @@ public class FileStatistic implements Statistic {
      */
     @Override
     public long getSize() {
-        return (isProcessed()) ? output.length() : -1;
+        return isProcessed() ? output.length() : -1;
     }
 
     /**

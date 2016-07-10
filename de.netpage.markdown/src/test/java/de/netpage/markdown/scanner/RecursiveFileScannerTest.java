@@ -29,7 +29,7 @@ public class RecursiveFileScannerTest {
     public void testFind() throws Exception {
         final Scanner scanner = new RecursiveFileScanner(baseDir, ".jpg");
         final List<File> files = scanner.find();
-        assertEquals(4, files.size());
+        assertEquals(6, files.size());
         final File file = findFile(files, "example-image.jpg");
         assertEquals("example-image.jpg", file.getName());
     }

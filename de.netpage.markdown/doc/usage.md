@@ -22,7 +22,7 @@ Dazu wird die pom.xml einfach um das Plugin "exec-maven-plugin" erweitert.
     <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
-        <version>1.3.2</version>
+        <version>1.5.0</version>
         <configuration>
             <includeProjectDependencies>true</includeProjectDependencies>
             <mainClass>de.netpage.markdown.Main</mainClass>
